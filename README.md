@@ -1,83 +1,165 @@
-# NovelReader
+# 📚 NovelReader
 
-一个小说阅读器 Android 应用
+一个基于 Android 原生开发的小说阅读器应用，采用 Java + Room 数据库实现本地小说管理与阅读功能。
 
 ## 项目简介
 
-NovelReader 是一款功能完整的 Android 小说阅读器应用，提供流畅的阅读体验和便捷的小说管理功能。
+NovelReader 是一款轻量级小说阅读器，用户可以在书架中管理自己的小说，通过阅读页面查看小说内容，并利用本地数据库实现数据持久化存储。
 
-## 主要功能
-
-- 📖 流畅的小说阅读体验
-- 📚 小说书库管理
-- 🔖 书签和进度保存
-- ⚙️ 阅读设置自定义
-- 🌙 深色模式支持
-
-## 技术栈
-
-- **语言**: Java
-- **平台**: Android
-- **最低API级别**: 需要根据项目配置调整
-
-## 项目结构
-
-```
-NovelReader/
-├── src/
-├── res/
-├── AndroidManifest.xml
-└── ...
-```
-
-## 快速开始
-
-### 前置要求
-
-- Android Studio
-- JDK 8 或更高版本
-- Android SDK
-
-### 构建与运行
-
-1. 克隆本仓库
-```bash
-git clone https://github.com/Zyy023577/NovelReader.git
-```
-
-2. 在 Android Studio 中打开项目
-
-3. 连接 Android 设备或启动模拟器
-
-4. 构建并运行应用
-```bash
-./gradlew build
-./gradlew installDebug
-```
-
-## 使用说明
-
-[根据需要补充应用的具体使用方法]
-
-## 功能特性
-
-- 支持多种小说格式
-- 灵活的排版设置
-- 自动保存阅读进度
-- 书籍分类管理
-
-## 贡献指南
-
-欢迎提交 Issue 和 Pull Request 来帮助改进项目！
-
-## 许可证
-
-[请根据项目实际情况选择合适的许可证]
-
-## 联系方式
-
-如有问题或建议，欢迎提交 Issue 或联系开发者。
+本项目作为 Android 移动应用开发课程设计项目完成。
 
 ---
 
-⭐ 如果你觉得这个项目有帮助，请给个 Star！
+## 功能特点
+
+### 📖 书架管理
+
+* 显示小说列表
+* RecyclerView 动态展示书籍
+* 添加新小说
+* 本地保存书籍信息
+
+### 📚 阅读功能
+
+* 点击书籍进入阅读页面
+* 显示当前阅读小说名称
+* 支持后续扩展章节阅读
+
+### 💾 数据持久化
+
+* 使用 Room 数据库
+* 本地存储书籍数据
+* 应用重启后数据不丢失
+
+### 🎨 用户界面
+
+* 简洁直观的书架界面
+* Android Material Design 风格
+* 良好的用户交互体验
+
+---
+
+## 技术栈
+
+### 开发环境
+
+* Android Studio
+* Java
+* Gradle
+
+### 核心技术
+
+* RecyclerView
+* Activity
+* Intent 页面跳转
+* Room Database
+* SQLite
+* Material Components
+
+---
+
+## 项目结构
+
+```text
+app
+├── java/com/example/novelreader
+│   ├── MainActivity.java
+│   ├── ReadActivity.java
+│   ├── Book.java
+│   ├── BookAdapter.java
+│   ├── BookDao.java
+│   └── AppDatabase.java
+│
+└── res
+    ├── layout
+    │   ├── activity_main.xml
+    │   ├── activity_read.xml
+    │   └── item_book.xml
+    │
+    └── drawable
+```
+
+---
+
+## 数据库设计
+
+### Book 表
+
+| 字段    | 类型     | 说明   |
+| ----- | ------ | ---- |
+| id    | int    | 主键   |
+| title | String | 小说名称 |
+
+---
+
+## 核心实现
+
+### RecyclerView 书架展示
+
+使用 RecyclerView 实现小说列表动态加载，提高界面性能和可扩展性。
+
+### Room 数据库
+
+采用 Room 作为 SQLite 的 ORM 框架：
+
+* Book 实体类
+* BookDao 数据访问接口
+* AppDatabase 数据库管理类
+
+### Activity 跳转
+
+通过 Intent 实现：
+
+```java
+Intent intent = new Intent(
+        MainActivity.this,
+        ReadActivity.class
+);
+```
+
+完成书架页与阅读页之间的跳转。
+
+---
+
+## 运行效果
+
+### 首页
+
+* 显示书架
+* 添加小说
+
+### 阅读页
+
+* 显示当前小说名称
+* 阅读内容展示
+
+---
+
+## 后续优化方向
+
+* 阅读进度保存
+* 夜间模式
+* 删除小说
+* 搜索功能
+* TXT 文件导入
+* EPUB 阅读支持
+* 字体大小调整
+* 书签功能
+
+---
+
+## 开发者
+
+姓名：张艺扬
+
+班级：计算机科学与技术2305班
+
+项目类型：Android 移动应用课程设计
+
+开发时间：2026.6.19
+
+---
+
+## License
+
+This project is for educational purposes only.
