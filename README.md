@@ -150,7 +150,7 @@ Intent intent = new Intent(
 
 ## 开发者
 
-姓名：张艺扬
+JoinYoung 202312565
 
 班级：计算机科学与技术2305班
 
